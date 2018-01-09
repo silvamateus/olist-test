@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <pre-input></pre-input>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+//Valinput means the text inputs that will be used to validate the new account and the passwords strengths
+import InputPreValidation from './components/InputPreValidation'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+   'pre-input' : InputPreValidation
   }
 }
 </script>
