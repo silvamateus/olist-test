@@ -1,27 +1,33 @@
 <template>
   <div id="app">
-    <pre-input></pre-input>
+    <login-card></login-card>
   </div>
 </template>
 
 <script>
-//Valinput means the text inputs that will be used to validate the new account and the passwords strengths
-import InputPreValidation from './components/InputPreValidation'
+import loginCard from './components/login-card.vue'
 export default {
   name: 'app',
   components: {
-   'pre-input' : InputPreValidation
+    'login-card' : loginCard
   }
 }
 </script>
 
 <style>
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #eee;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Proxima Nova', Georgia, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-}
+  margin: 0;
+  }
 </style>
