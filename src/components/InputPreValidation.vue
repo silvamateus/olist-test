@@ -1,14 +1,14 @@
 <template>
 <div>
     <div v-for="value in inputData" :key="value.id">
-        <input-default v-bind:inputType="value"></input-default>
+        <input-default :inputType="value"></input-default>
     </div>
   </div>
 </template>
 
 
 <script>
-import inputDefault from "./inputDefault";
+import inputDefault from "./general-use/inputDefault";
 
 export default {
   name: "InputPreValidation",
@@ -21,8 +21,7 @@ export default {
     return {
       inputData: {
         nameInput: { typo: "text", label: "Nome Completo", id: "name" },
-        emailInput: { typo: "text", label: "E-mail", id: "e-mail" },
-        passInput: { typo: "password", label: "Senha", id: "password" }
+        emailInput: { typo: "text", label: "E-mail", id: "e-mail" }
       }
     }
   }
