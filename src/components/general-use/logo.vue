@@ -7,6 +7,9 @@
 
 
 <style scoped>
+    div{
+        text-align: center;
+    }
 
     h2{
         font-size: 22px;
