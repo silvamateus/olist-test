@@ -1,7 +1,7 @@
 <template>
   <div class='input-card'>
-    <label :for="inputType.id">{{inputType.label}}</label>
-    <input :type="inputType.typo" class='input-default' :id="inputType.id" >
+    <label :for="inputType.id" >{{inputType.label}}</label>
+    <input :type="inputType.typo" v-model="checkInput" class='input-default' :id="inputType.id" >
   </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods:{
+    checkPass(){
+      this.$emit('checkInput', 'contentCheck')
+    }
   }
 };
 </script>
