@@ -18,8 +18,8 @@ export default {
     return {};
   },
   methods:{
-    checkPass(){
-      this.$emit('checkInput', 'contentCheck')
+    checkInput(){
+      this.$emit('checkInput')
     }
   }
 };

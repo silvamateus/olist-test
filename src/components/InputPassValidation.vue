@@ -1,7 +1,7 @@
 <template>
   <div>
       <div>
-          <passw-input :inputType="pass"></passw-input>
+          <passw-input :inputType="pass" v-on:checkInput="checkPassword"></passw-input>
           <ul>
               <li>Pelo menos 6 caracteres</li>
               <li>Pelo menos 1 letra maiúscula</li>
@@ -24,8 +24,14 @@
 
         data(){
             return{
+                color:'#999',
                 pass: {typo: "password", label: "Senha", id: "password"},
                 passconf: {typo: "password", label: "Confirmar Senha", id: "password-confirmation"}
+            }
+        },
+        methods:{
+            checkPassword(){
+                return
             }
         }
     
@@ -36,5 +42,12 @@
     ul li{
         text-align: left;
         
+    }
+    span{
+        color: #010101;
+    }
+
+    ul.valid{
+        color: red;
     }
 </style>
