@@ -1,7 +1,7 @@
 <template>
   <div class='input-card'>
     <label :for="inputType.id" >{{inputType.label}}</label>
-    <input :type="inputType.typo" v-model="checkInput" class='input-default' :id="inputType.id" >
+    <input :type="inputType.typo" v-model="check" class='input-default' :id="inputType.id" >
   </div>
 </template>
 
@@ -15,11 +15,13 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      check: ''
+    };
   },
   methods:{
-    checkInput(){
-      this.$emit('checkInput')
+    checkInput: function(checkVal){
+      this.$emit('checkData',checkVal)
     }
   }
 };

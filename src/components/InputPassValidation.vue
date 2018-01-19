@@ -1,7 +1,7 @@
 <template>
   <div>
       <div>
-          <passw-input :inputType="pass" v-on:checkInput="checkPassword"></passw-input>
+          <passw-input :inputType="pass" @checkData="checkPassword"></passw-input>
           <ul>
               <li>Pelo menos 6 caracteres</li>
               <li>Pelo menos 1 letra maiúscula</li>
@@ -16,7 +16,7 @@
 
     import inputDefault from "./general-use/inputDefault";
     export default {
-
+        
         name: 'PassValidation',
         components: {
             'passw-input' : inputDefault
@@ -24,14 +24,20 @@
 
         data(){
             return{
-                color:'#999',
+                inputVal: '',
+                color: 'grey',
                 pass: {typo: "password", label: "Senha", id: "password"},
                 passconf: {typo: "password", label: "Confirmar Senha", id: "password-confirmation"}
             }
         },
-        methods:{
-            checkPassword(){
-                return
+        computed:{
+            checkPassword: function(sizeInp){
+               return this.inputVal = sizeInp
+            }
+        },
+        watch:{
+            checkSixMin: function(val){
+                console.log(val)
             }
         }
     
